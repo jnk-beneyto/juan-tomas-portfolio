@@ -1,0 +1,44 @@
+@use 'variables';
+
+@mixin flex-container($direction:row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify; 
+  align-items: $align; 
+ }
+
+ @mixin grid-container() {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fill ,minmax(300px, 1fr));
+ }
+
+ @mixin oswaldTitle($size: 1.7em) {
+  font-family: variables.$secondaryFont;
+  font-weight:bold;
+  font-size:$size;
+ }
+
+ @mixin oswaldSubTitle($size: .8em) {
+  font-family: variables.$secondaryFont;
+  font-weight: 600;
+  font-size:$size;
+ }
+
+ @mixin openSansParagragh() {
+  font-family: variables.$mainFont;
+  font-weight:400;
+  font-size:medium;
+ }
+
+ @mixin marginTopBottom($top: 1rem, $bottom: 1rem) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+ }
+
+ @mixin desktop($width: 900px) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+ }
+
