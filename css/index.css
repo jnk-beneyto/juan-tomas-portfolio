@@ -650,8 +650,12 @@ header .rs {
   margin: 2rem 0 0 0;
   display: block;
 }
+#home .container .hero-wrapper .hero-image img {
+  width: 110px;
+}
 @media screen and (min-width: 900px) {
   #home .container .hero-wrapper .hero-image img {
+    width: 250px;
     padding-right: 1rem;
     scale: unset;
   }
@@ -933,15 +937,26 @@ header .rs {
   margin: 1.5rem 0 0 2.2rem;
   font-weight: 700;
 }
+#contate .container-section .contact-section .sub-title-contact img {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+}
 #contate .container-section .contact-list {
   background-color: #fff;
   border-radius: 0.4rem;
   padding: 0 0 1.4rem 0;
 }
-@media screen and (min-width: 900px) {
-  #contate .container-section .contact-list {
-    margin-top: -170px;
-  }
+#contate .container-section .contact-list .map {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#contate .container-section .contact-list .map img {
+  object-fit: cover;
+  max-width: 80%;
+  display: block;
+  padding: 2rem;
 }
 #contate .container-section .container-contact-form {
   background-color: #fff;
@@ -952,22 +967,26 @@ header .rs {
     margin-top: -38px;
   }
 }
-#contate .container-section .container-contact-form p {
-  padding: 1.2rem;
+#contate .container-section .container-contact-form .message-sent {
+  opacity: 0;
+  background-color: green;
+  color: #fff;
+  margin: 0 2rem;
+  padding: 0.4rem;
+  min-height: 32px;
 }
 #contate .container-section .container-contact-form .form {
   width: 100%;
-  margin: 2rem 0;
   padding: 0 0 1.4rem 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
-#contate .container-section .container-contact-form .form input, #contate .container-section .container-contact-form .form label, #contate .container-section .container-contact-form .form button {
+#contate .container-section .container-contact-form .form input, #contate .container-section .container-contact-form .form label, #contate .container-section .container-contact-form .form button, #contate .container-section .container-contact-form .form textarea {
   margin: 0 1rem;
 }
-#contate .container-section .container-contact-form .form input {
+#contate .container-section .container-contact-form .form input, #contate .container-section .container-contact-form .form textarea {
   width: 85%;
   margin: 0.2rem;
   padding: 0.8rem 0;
@@ -975,7 +994,11 @@ header .rs {
   border: 2px solid transparent;
   border-bottom: 2px solid #00151D;
 }
-#contate .container-section .container-contact-form .form input::placeholder {
+#contate .container-section .container-contact-form .form textarea {
+  margin-top: 1.4rem;
+  border: 2px solid #00151D;
+}
+#contate .container-section .container-contact-form .form input::placeholder, #contate .container-section .container-contact-form .form textarea::placeholder {
   padding-left: 0.5rem;
   font-size: 20px;
 }

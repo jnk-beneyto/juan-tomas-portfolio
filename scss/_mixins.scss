@@ -42,3 +42,8 @@
   }
  }
 
+ @mixin maxHeight($height: 375px) {
+  @media screen and (max-width: 900px) and (max-height: $height) {
+    @content;
+  }
+ }

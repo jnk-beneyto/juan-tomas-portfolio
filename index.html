@@ -90,7 +90,7 @@
               <div class="hero-data-list">
                 <ul>
                   <li><img src="./assets/telephone.png" alt="telephone"> <span class="value">(85) 999 957 562</span></li>
-                  <li><img src="./assets/email.png" alt="telephone"> <span class="value">peritosbrasil.oficial@gmail.com</span></li>
+                  <li><img src="./assets/email.png" alt="email"> <span class="value">peritosbrasil.oficial@gmail.com</span></li>
                 </ul>
               </div>
               <a href="CURRICULUM VITAE.pdf" download="CURRICULUM VITAE.pdf">
@@ -103,7 +103,7 @@
               </div>
             </div>
             <div class="hero-image">
-              <img src="./assets/juanTomasHero.png" alt="juan tomas beneyto paysal">
+              <img src="./assets/juanTomasHeroBigger.png" alt="juan tomas beneyto paysal">
             </div>
   
         </div>
@@ -123,9 +123,6 @@
         </div>
       </div>
     </section>
-
-
-
 
     <section id="formatura">
       <div class="container">
@@ -210,6 +207,7 @@
         </div>
       </div>
     </section>
+    
     <section id="servicos">
       <div class="container">
         <div class="title"><h3>SERVIÇOS</h3></div>
@@ -378,16 +376,19 @@
       <ul>
         <li>Quaranta e sete nº 351- Conj. José Walter-CEP: 60750-610- Fortaleza-Ceará/Brasil</li>
       </ul>
+      <div class="map">
+        <img src="./assets/mapa.png" alt="mapa" height="150" width="150" />
+      </div>
     </div>
     <div class="phones">
-      <div class="sub-title-contact">TELEFONES:</div>
+      <div class="sub-title-contact"><img src="./assets/telephone.png" alt="telephone"> TELEFONES:</div>
       <ul>
         <li><strong>Fone:</strong>  (+55) (85) 3232-9022</li>
         <li><strong>Celular:</strong>  (+55) (85) 999 957 562</li>
       </ul>
     </div>
     <div class="emails">
-      <div class="sub-title-contact">EMAILS:</div>
+      <div class="sub-title-contact"><img src="./assets/email.png" alt="email"> EMAILS:</div>
       <ul>
         <li><strong>Email 1:</strong> peritosbrasil.oficial@gmail.com</li>
         <li><strong>Email 2:</strong> peritosbrasil.jus@gmail.com</li>
@@ -399,14 +400,14 @@
   <div class="container-contact-form">
     <div class="title-contact"><h3>FORMULARIO</h3></div>
     <!-- <p>Si precisa de assessoramiento deixe sua informaçao e 24h pongo en contacto con voçê</p> -->
+   <div class="message-sent"></div>
     <form class="form">
-      <label for="nome">Nome</label>
+      <label for="nome">Nome <span>*</span></label>
       <input name="nome" id="nome" type="text" placeholder="Escreva seu nome">
-      <label for="email">Email</label>
+      <label for="email">Email <span>*</span></label>
       <input name="email" id="email" type="email" placeholder="Escreva seu email">
-      <label for="celular">Celular</label>
-      <input name="celular" id="celular" type="tel" placeholder="Escreva seu celular">
-      <button>ENVIAR SOLICITUD</button>
+      <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Escreva seu caso"></textarea>
+      <button id="form-btn">ENVIAR SOLICITUD</button>
     </form>
   </div>
 </div>
@@ -419,4 +420,6 @@
   </main>
 </body>
 <script src="./index.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
 </html>

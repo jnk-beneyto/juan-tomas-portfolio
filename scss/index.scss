@@ -279,8 +279,9 @@ header {
         display: block;
     
         img {
-          // scale: 2;
+          width: 110px;
           @include mixins.desktop() {
+            width: 250px;
             padding-right: 1rem;
             scale: unset;
           }
@@ -587,6 +588,11 @@ header {
         .sub-title-contact{
           margin: 1.5rem 0 0 2.2rem;
           font-weight: 700;
+          img {
+            display: inline-block;
+            height: 16px;
+            width: 16px;
+          }
         }
       }
 
@@ -595,7 +601,19 @@ header {
         border-radius: .4rem;
         padding: 0 0 1.4rem 0;
         @include mixins.desktop() {
-          margin-top: -170px;
+          //margin-top: -170px;
+        }
+
+        .map {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          img {
+            object-fit: cover;
+            max-width: 80%;
+            display: block;
+            padding: 2rem;
+          }
         }
       }
 
@@ -607,20 +625,24 @@ header {
           margin-top: -38px;
         }
 
-        p {
-          padding: 1.2rem;
+        .message-sent {
+          opacity: 0;
+          background-color: green;
+          color: variables.$white;
+          margin: 0 2rem;
+          padding: .4rem;
+          min-height: 32px;
         }
 
         .form{
           width: 100%;
-          margin: 2rem 0;
           padding: 0 0 1.4rem 0;
-          input, label, button {
+          input, label, button, textarea {
             margin: 0 1rem;
           }
 
           @include mixins.flex-container(column, flex-start ,center);
-          input {
+          input, textarea {
             width: 85%;
             margin: .2rem;
             padding: .8rem 0;
@@ -629,7 +651,12 @@ header {
             border-bottom: 2px solid variables.$black;
           }
 
-          input::placeholder {
+          textarea {
+            margin-top: 1.4rem;
+            border: 2px solid variables.$black; 
+          }
+
+          input::placeholder, textarea::placeholder {
             padding-left: .5rem;
             font-size: 20px;
           }
