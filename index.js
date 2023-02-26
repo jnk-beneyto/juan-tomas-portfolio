@@ -101,7 +101,7 @@ function sendEmail(e, nomeInput, emailInput, comentarioInput) {
     Host : "smtp.elasticemail.com",
     Username : "jnk.beneyto@gmail.com",
     Password : "69B5A82D1F9CB97F30B97C697E526F81BBBF",
-    To : 'juankete78@gmail.com',
+    To : 'peritosbrasil.oficial@gmail.com',
     From : `${emailInput}`,
     Subject : `Consulta web de ${nomeInput}`,
     Body : template
