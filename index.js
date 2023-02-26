@@ -89,14 +89,15 @@ const formBtn = document.querySelector('#form-btn')
  }
 
  function resetForm() {
-  nomeInput.textContent = ''
-  emailInput.textContent = ''
-  comentarioInput.textContent = ''
+  nomeInput.value = ''
+  emailInput.value = ''
+  comentarioInput.value = ''
 }
 
 function sendEmail(e, nomeInput, emailInput, comentarioInput) {
   e.preventDefault();
   const template = setTemplateData(nomeInput, emailInput, comentarioInput);
+  resetForm();
   Email.send({
     Host : "smtp.elasticemail.com",
     Username : "jnk.beneyto@gmail.com",
