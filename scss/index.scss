@@ -41,6 +41,7 @@ header {
   
   .mainInner {
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,6 +52,7 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     height: 100vh;
+    height: 100svh;
   }
   
   #sidebarMenu {
@@ -212,8 +214,43 @@ header {
 
   .container{
     max-width: 100%;
+    @include mixins.desktop() {
+      margin-top: unset;
+    }
     .hero-wrapper, .hero-data, .hero-image{
       @include mixins.flex-container(column);
+    }
+
+    .hero-image-wrapper {
+      @include mixins.flex-container(column);
+      @include mixins.desktop() {
+        @include mixins.flex-container();
+      }
+    }
+
+    .perito-image {
+      @include mixins.flex-container();
+      
+      img {
+        max-width: 110px;
+
+        @include mixins.minWidth() {
+          max-width: 35%;
+        }
+
+        @include mixins.minWidth(769px) {
+          max-width: 30%;
+        }
+
+        @include mixins.desktop() {
+          max-width: 40%;
+          padding-right: 1rem;
+          scale: unset;
+          margin-top:50px;
+        }
+      }
+
+      
     }
   
     .hero-wrapper{
@@ -221,7 +258,7 @@ header {
         margin-top: 3rem;
         min-width: 700px;
         max-width: 1300px;
-        @include mixins.flex-container(row, space-between ,center);
+        @include mixins.flex-container(row, center ,center);
       }
   
       .hero-data {
@@ -270,23 +307,17 @@ header {
     
         &-button{
           @include mixins.marginTopBottom();
-        }
-      }
-    
-      .hero-image {
-        order: 1;
-        margin: 2rem 0 0 0;
-        display: block;
-    
-        img {
-          width: 110px;
-          @include mixins.desktop() {
-            width: 250px;
-            padding-right: 1rem;
-            scale: unset;
+
+          @include mixins.minWidth(415px) {
+            @include mixins.marginTopBottom(0,1);
           }
+          // @include mixins.maxWidth(376px) {
+          //   @include mixins.marginTopBottom(0,1);
+          // }
         }
       }
+    
+      
     }
   
 
@@ -299,7 +330,7 @@ header {
       padding: 1rem;
 
       @include mixins.desktop() {
-        margin-top: 3rem;
+        margin-top: 2rem;
         font-size: 16px;
       }
     }
@@ -308,28 +339,35 @@ header {
       width: 100%;
       margin-top: 1rem;
       .assossiacoes-image-list {
-        @include mixins.flex-container(row,center, center);
+        @include mixins.flex-container(row, space-between, center);
+        flex-wrap: wrap;
         img {
           height: 40px;
           width: 40px;
           margin: 0 .2rem;
-  
+
           @include mixins.desktop(500px) {
             height: 45px;
-            width: 45px;
+            width: auto;
             margin: 0 .5rem; 
           }
-  
+
           @include mixins.desktop() {
             height: 75px;
-            width: 75px;
-            margin: 0 1.4rem; 
+            width: auto;
+            margin: 0; 
           }
         }
       }
   
       @include mixins.desktop() {
         margin-top: 5%; 
+      }
+    }
+
+    .footer-wrapper {
+      @include mixins.desktop() {
+       padding-inline: 1rem;
       }
     }
   }
@@ -503,7 +541,7 @@ header {
                 @include mixins.flex-container();
 
                 img {
-                  width: 100%;
+                  width: 200px;
                   max-height: 200px;
                   border-radius: 4px;
                   border: 3px solid black;
@@ -562,9 +600,8 @@ header {
 
     &-section {
       @include mixins.desktop() {
-        margin-top: 3rem;
         gap: 2rem;
-        @include mixins.flex-container(row, space-between ,center);
+        @include mixins.flex-container(row, space-between ,baseline);
       }
 
       .contact-section {
@@ -580,7 +617,7 @@ header {
           color: variables.$white;
          
           h3 {
-            padding: .1rem;
+            padding: .5rem;
             margin-left: 2.2rem;
           }
         }
@@ -594,12 +631,16 @@ header {
             width: 16px;
           }
         }
-      }
 
+        .address > ul > li {
+          padding: 0 0 0 .4rem;
+        }
+      }
+      
       .contact-list {
         background-color: variables.$white;
         border-radius: .4rem;
-        padding: 0 0 1.4rem 0;
+        padding: 0 0 66px 0;
         @include mixins.desktop() {
           //margin-top: -170px;
         }
@@ -645,7 +686,7 @@ header {
           input, textarea {
             width: 85%;
             margin: .2rem;
-            padding: .8rem 0;
+            padding: .8rem .5rem;
             border-radius: 4px;
             border: 2px solid transparent;
             border-bottom: 2px solid variables.$black;

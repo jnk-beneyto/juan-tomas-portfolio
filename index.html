@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Juan Tomas Beneyto Paysal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
@@ -16,16 +16,6 @@
 <body>
   
   <header class="header">
-    <!-- <div class="logoContainer">
-      <a href="#home">
-        <img
-          class="logo"
-          src="./assets/logo.png"
-          width="60px"
-          height="60px"
-        />
-      </a>
-    </div> -->
     <nav>
       <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" />
       <label for="openSidebarMenu" class="sidebarIconToggle">
@@ -35,10 +25,11 @@
       </label>
       <div id="sidebarMenu">
         <ul class="sidebarMenuInner">
-          <li class="dropdown"><a href="#home">HOME</a></li>
-          <li class="dropdown"><a href="#formatura">FORMATURA</a></li>
-          <li class="dropdown"><a href="#servicos">SERVIÇOS</a></li>
-          <li class="dropdown"><a href="#contate">CONTATE</a></li>
+          <a href="#home"><li class="dropdown">HOME</li></a>
+          <a href="#formatura"><li class="dropdown">FORMATURA</li></a>
+          <a href="#servicos"><li class="dropdown">SERVIÇOS</li></a>
+          <a href="#medios"><li class="dropdown">MEDIOS</li></a>
+          <a href="#contate"><li class="dropdown">CONTATE</li></a>
         </ul>
         <!-- <div class="rrss-mobile">
           <div class="rs">
@@ -82,43 +73,46 @@
   <main>
     <section id="home">
       <div class="container">
-        <div class="hero-wrapper">
-  
-            <div class="hero-data">
-              <h1>JUAN TOMAS BENEYTO PAYSAL</h1>
-              <h2>CRIMINALISTA E PERITO JUDICIAL</h2>
-              <div class="hero-data-list">
-                <ul>
-                  <li><img src="./assets/telephone.png" alt="telephone"> <span class="value">(85) 999 957 562</span></li>
-                  <li><img src="./assets/email.png" alt="email"> <span class="value">peritosbrasil.oficial@gmail.com</span></li>
-                </ul>
+        <div class="hero-image-wrapper">
+          <div class="perito-image">
+            <img src="./assets/juantomas.jpg" alt="juan tomas beneyto paysal">
+          </div>
+          <div class="hero-wrapper">
+              <div class="hero-data">
+                <h1>JUAN TOMAS BENEYTO PAYSAL</h1>
+                <h2>CRIMINALISTA E PERITO JUDICIAL</h2>
+                <div class="hero-data-list">
+                  <ul>
+                    <li><img src="./assets/telephone.png" alt="telephone"> <span class="value">(85) 999 957 562</span></li>
+                    <li><img src="./assets/email.png" alt="email"> <span class="value">peritosbrasil.oficial@gmail.com</span></li>
+                  </ul>
+                </div>
+                <a href="CURRICULUM VITAE.pdf" download="CURRICULUM VITAE.pdf">
+                  <button class="hero-data-button">
+                    Descarregue CV
+                  </button>
+                </a>
+                <div>
+                  <span>Saiba mais <a href="http://wwww.peritosbrasil.com">wwww.peritosbrasil.com</a></span>
+                </div>
               </div>
-              <a href="CURRICULUM VITAE.pdf" download="CURRICULUM VITAE.pdf">
-                <button class="hero-data-button">
-                  Descarregue CV
-                </button>
-              </a>
-              <div>
-                <span>Saiba mais <a href="http://wwww.peritosbrasil.com">wwww.peritosbrasil.com</a></span>
-              </div>
-            </div>
-            <div class="hero-image">
-              <img src="./assets/juanTomasHeroBigger.png" alt="juan tomas beneyto paysal">
-            </div>
-  
+    
+          </div>
         </div>
-        <div class="inscricao">
-          Inscrição ISS no.192779-5-Prefeitura M. Fortaleza; CPF-620430483-68. Inscrito no COPEJU-CE: Matricula- no 213002.
-        </div>
-        <div class="hero-assossiacoes-wrapper">
-          <div class="assossiacoes-image-list">
-            <img src="./assets/footer-asoc-1.jpeg" alt="">
-            <img src="./assets/footer-asoc-2.jpg" alt="">
-            <img src="./assets/footer-asoc-3.jpeg" alt="">
-            <img src="./assets/footer-asoc-4.jpeg" alt="">
-            <img src="./assets/footer-asoc-5.jpeg" alt="">
-            <img src="./assets/footer-asoc-6.jpeg" alt="">
-            <img src="./assets/footer-asoc-7.jpeg" alt="">
+        <div class="footer-wrapper">
+          <div class="inscricao">
+            Inscrição ISS no.192779-5-Prefeitura M. Fortaleza; CPF-620430483-68. Inscrito no COPEJU-CE: Matricula- no 213002.
+          </div>
+          <div class="hero-assossiacoes-wrapper">
+            <div class="assossiacoes-image-list">
+              <img src="./assets/footer-asoc-1.jpeg" alt="">
+              <img src="./assets/footer-asoc-2.jpg" alt="">
+              <img src="./assets/footer-asoc-3.jpeg" alt="">
+              <img src="./assets/footer-asoc-4.jpeg" alt="">
+              <img src="./assets/footer-asoc-5.jpeg" alt="">
+              <img src="./assets/footer-asoc-6.jpeg" alt="">
+              <img src="./assets/footer-asoc-7.jpeg" alt="">
+            </div>
           </div>
         </div>
       </div>
@@ -207,7 +201,7 @@
         </div>
       </div>
     </section>
-    
+
     <section id="servicos">
       <div class="container">
         <div class="title"><h3>SERVIÇOS</h3></div>
@@ -297,7 +291,7 @@
 
     <div id="medios">
       <div class="container">
-        <div class="title"><h3>OS MEDIOS</h3></div>
+        <div class="title"><h3>MEDIOS</h3></div>
         <div class="container-section">
           <div class="tv">
             <div class="list-container">
@@ -405,16 +399,12 @@
       <label for="nome">Nome <span>*</span></label>
       <input name="nome" id="nome" type="text" placeholder="Escreva seu nome">
       <label for="email">Email <span>*</span></label>
-      <input name="email" id="email" type="email" placeholder="Escreva seu email">
+      <input name="email" id="email" type="email" placeholder="Escreva seu comentario">
       <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Escreva seu caso"></textarea>
       <button id="form-btn">ENVIAR SOLICITUD</button>
     </form>
   </div>
 </div>
-         
-
-         
-
       </div>     
     </section>
   </main>

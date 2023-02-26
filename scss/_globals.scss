@@ -1,20 +1,17 @@
 @use 'variables';
 @use 'mixins';
 
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   overflow-x: hidden;
   height: 100%;
   scroll-behavior: smooth;
 }
-
-// .image {
-//   max-width: 80%;
-//   height: auto;
-//   object-fit: contain;
-//   margin: 0 1rem;
-//   transform: scale(1.2);
-// }
 
 
 main {
@@ -52,6 +49,7 @@ a {
 
 section {
   min-height: 100vh;
+  min-height: 100svh;
 }
 
 button {

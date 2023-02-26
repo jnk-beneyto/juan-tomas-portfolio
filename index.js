@@ -19,7 +19,7 @@ const messageSent = document.querySelector('.message-sent')
 const formBtn = document.querySelector('#form-btn')
 
  function validateEmail(emailInput) {
-	const mailformat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+	const mailformat = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/
 	if(!emailInput.match(mailformat))
 	{
 		return false;
@@ -28,7 +28,7 @@ const formBtn = document.querySelector('#form-btn')
 }
 
  function isAllDataFillup(nomeInput, emailInput, comentarioInput) {
-  console.log({nomeInput, emailInput, comentarioInput})
+
   const nome = (nomeInput).trim();
   const email = (emailInput).trim();
   const comment = (comentarioInput).trim();
@@ -39,14 +39,14 @@ const formBtn = document.querySelector('#form-btn')
   const isValidEmail = validateEmail(email);
 
   const hasComment = comment !== "";
-  console.log({hasNome , hasEmail , isValidEmail , hasComment});
+
   return hasNome && hasEmail && isValidEmail && hasComment;
  }
 
  function setTemplateData(nomeInput, emailInput, comentarioInput) {
    return `
    <div class="footer">
-   <p style="color: green">Mensagem enviado com successo.</p>
+   <p style="color: green">Mensagem recibido com successo.</p>
    <p>Dados enviados:</p>
    <ul>
      <li>
@@ -59,7 +59,7 @@ const formBtn = document.querySelector('#form-btn')
        <strong>COMENTARIO:</strong> ${comentarioInput}
      </li>
    </ul>
-   <p>En breve contactaremos com você. Obrigado por sua confiança</p>
+   <p>Datos persoa contato:</p>
    <div style="display: flex; margin-top: 1.5rem">
    <span style="
     display: flex;
@@ -97,7 +97,6 @@ const formBtn = document.querySelector('#form-btn')
 function sendEmail(e, nomeInput, emailInput, comentarioInput) {
   e.preventDefault();
   const template = setTemplateData(nomeInput, emailInput, comentarioInput);
-  console.log({ template })
   Email.send({
     Host : "smtp.elasticemail.com",
     Username : "jnk.beneyto@gmail.com",
@@ -108,7 +107,6 @@ function sendEmail(e, nomeInput, emailInput, comentarioInput) {
     Body : template
   }).then( message => 
     {
-      console.log({message});
       messageSent.style.opacity = 1;
       messageSent.style.background = 'green';
       messageSent.textContent = "Mensagem enviado con succeso.";
@@ -128,7 +126,6 @@ function sendEmail(e, nomeInput, emailInput, comentarioInput) {
 
 formBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  console.log(nomeInput.value, emailInput.value, comentarioInput.value);
   const validation = isAllDataFillup(nomeInput.value, emailInput.value, comentarioInput.value);
   if (!validation) {
     console.log('validation', validation)
@@ -140,7 +137,6 @@ formBtn.addEventListener('click', (e) => {
         messageSent.style.opacity = 0;
       },5000);
   } else {
-    console.log('envio');
     sendEmail(e, nomeInput.value, emailInput.value, comentarioInput.value);
   }
 })

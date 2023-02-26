@@ -307,6 +307,10 @@ template {
   display: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   overflow-x: hidden;
@@ -353,6 +357,7 @@ a {
 
 section {
   min-height: 100vh;
+  min-height: 100svh;
 }
 
 button {
@@ -416,6 +421,7 @@ header .main {
 }
 header .mainInner {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -425,6 +431,7 @@ header .mainHomeContainer {
   flex-direction: column;
   justify-content: space-evenly;
   height: 100vh;
+  height: 100svh;
 }
 header #sidebarMenu {
   z-index: 10;
@@ -573,11 +580,57 @@ header .rs {
 #home .container {
   max-width: 100%;
 }
+@media screen and (min-width: 900px) {
+  #home .container {
+    margin-top: unset;
+  }
+}
 #home .container .hero-wrapper, #home .container .hero-data, #home .container .hero-image {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#home .container .hero-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 900px) {
+  #home .container .hero-image-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#home .container .perito-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#home .container .perito-image img {
+  max-width: 110px;
+}
+@media screen and (min-width: 376px) {
+  #home .container .perito-image img {
+    max-width: 35%;
+  }
+}
+@media screen and (min-width: 769px) {
+  #home .container .perito-image img {
+    max-width: 30%;
+  }
+}
+@media screen and (min-width: 900px) {
+  #home .container .perito-image img {
+    max-width: 40%;
+    padding-right: 1rem;
+    scale: unset;
+    margin-top: 50px;
+  }
 }
 @media screen and (min-width: 900px) {
   #home .container .hero-wrapper {
@@ -586,7 +639,7 @@ header .rs {
     max-width: 1300px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 }
@@ -645,19 +698,10 @@ header .rs {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-#home .container .hero-wrapper .hero-image {
-  order: 1;
-  margin: 2rem 0 0 0;
-  display: block;
-}
-#home .container .hero-wrapper .hero-image img {
-  width: 110px;
-}
-@media screen and (min-width: 900px) {
-  #home .container .hero-wrapper .hero-image img {
-    width: 250px;
-    padding-right: 1rem;
-    scale: unset;
+@media screen and (min-width: 415px) {
+  #home .container .hero-wrapper .hero-data-button {
+    margin-top: 0;
+    margin-bottom: 1;
   }
 }
 #home .container .inscricao {
@@ -670,7 +714,7 @@ header .rs {
 }
 @media screen and (min-width: 900px) {
   #home .container .inscricao {
-    margin-top: 3rem;
+    margin-top: 2rem;
     font-size: 16px;
   }
 }
@@ -681,8 +725,9 @@ header .rs {
 #home .container .hero-assossiacoes-wrapper .assossiacoes-image-list {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 #home .container .hero-assossiacoes-wrapper .assossiacoes-image-list img {
   height: 40px;
@@ -692,20 +737,25 @@ header .rs {
 @media screen and (min-width: 500px) {
   #home .container .hero-assossiacoes-wrapper .assossiacoes-image-list img {
     height: 45px;
-    width: 45px;
+    width: auto;
     margin: 0 0.5rem;
   }
 }
 @media screen and (min-width: 900px) {
   #home .container .hero-assossiacoes-wrapper .assossiacoes-image-list img {
     height: 75px;
-    width: 75px;
-    margin: 0 1.4rem;
+    width: auto;
+    margin: 0;
   }
 }
 @media screen and (min-width: 900px) {
   #home .container .hero-assossiacoes-wrapper {
     margin-top: 5%;
+  }
+}
+@media screen and (min-width: 900px) {
+  #home .container .footer-wrapper {
+    padding-inline: 1rem;
   }
 }
 
@@ -860,7 +910,7 @@ header .rs {
   align-items: center;
 }
 #medios .container-section .tv .list-container .card-show-wrapper .card-show-header img {
-  width: 100%;
+  width: 200px;
   max-height: 200px;
   border-radius: 4px;
   border: 3px solid black;
@@ -907,12 +957,11 @@ header .rs {
 }
 @media screen and (min-width: 900px) {
   #contate .container-section {
-    margin-top: 3rem;
     gap: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
   }
 }
 #contate .container-section .contact-section {
@@ -930,7 +979,7 @@ header .rs {
   color: #fff;
 }
 #contate .container-section .contact-section .title-contact h3 {
-  padding: 0.1rem;
+  padding: 0.5rem;
   margin-left: 2.2rem;
 }
 #contate .container-section .contact-section .sub-title-contact {
@@ -942,10 +991,13 @@ header .rs {
   height: 16px;
   width: 16px;
 }
+#contate .container-section .contact-section .address > ul > li {
+  padding: 0 0 0 0.4rem;
+}
 #contate .container-section .contact-list {
   background-color: #fff;
   border-radius: 0.4rem;
-  padding: 0 0 1.4rem 0;
+  padding: 0 0 66px 0;
 }
 #contate .container-section .contact-list .map {
   display: flex;
@@ -989,7 +1041,7 @@ header .rs {
 #contate .container-section .container-contact-form .form input, #contate .container-section .container-contact-form .form textarea {
   width: 85%;
   margin: 0.2rem;
-  padding: 0.8rem 0;
+  padding: 0.8rem 0.5rem;
   border-radius: 4px;
   border: 2px solid transparent;
   border-bottom: 2px solid #00151D;
