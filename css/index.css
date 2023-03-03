@@ -352,7 +352,7 @@ li {
 
 a {
   text-decoration: none;
-  color: rgb(58, 201, 135);
+  color: #4A65C5;
 }
 
 section {
@@ -373,9 +373,9 @@ button {
 
 button:hover {
   cursor: pointer;
-  background-color: rgb(58, 201, 135);
+  background-color: #4A65C5;
   padding: 0.7rem;
-  border: 1px solid rgb(58, 201, 135);
+  border: 1px solid #4A65C5;
   border-radius: 0.4rem;
   color: #fff;
   -webkit-box-shadow: 10px 10px 13px -6px rgb(41, 42, 42);
@@ -506,7 +506,7 @@ header .spinner {
   position: absolute;
   height: 3px;
   width: 100%;
-  background-color: rgb(58, 201, 135);
+  background-color: #4A65C5;
 }
 header .horizontal {
   transition: all 0.3s;
@@ -558,7 +558,23 @@ header .rs {
   margin: 1rem 3rem;
 }
 
+.call-action {
+  position: absolute;
+  max-width: 70px;
+  max-height: 70px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 4px solid #4A65C5;
+  right: 24px;
+  bottom: 8px;
+  box-shadow: 15px 30px 30px -6px rgba(41, 42, 42, 0.5);
+}
+.call-action img {
+  transform: scale(0.6);
+}
+
 #home {
+  position: relative;
   width: 100%;
   background-color: #fff;
   background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);
@@ -699,16 +715,17 @@ header .rs {
     margin-bottom: 1;
   }
 }
-#home .container .inscricao {
+#home .container .slogan {
   margin-top: 1rem;
   text-align: center;
-  font-size: 12px;
-  color: #fff;
-  background-color: #00151D;
+  font-size: 16px;
+  font-weight: 700;
+  color: #4A65C5;
+  background-color: #fff;
   padding: 1rem;
 }
 @media screen and (min-width: 900px) {
-  #home .container .inscricao {
+  #home .container .slogan {
     margin-top: 2rem;
     font-size: 16px;
   }
@@ -725,22 +742,13 @@ header .rs {
   flex-wrap: wrap;
 }
 #home .container .hero-assossiacoes-wrapper .assossiacoes-image-list img {
-  height: 40px;
-  width: 40px;
-  margin: 0 0.2rem;
+  height: 70px;
+  width: auto;
+  margin: 0.4rem;
 }
 @media screen and (min-width: 500px) {
   #home .container .hero-assossiacoes-wrapper .assossiacoes-image-list img {
-    height: 45px;
-    width: auto;
-    margin: 0 0.5rem;
-  }
-}
-@media screen and (min-width: 900px) {
-  #home .container .hero-assossiacoes-wrapper .assossiacoes-image-list img {
     height: 75px;
-    width: auto;
-    margin: 0;
   }
 }
 @media screen and (min-width: 900px) {
@@ -824,17 +832,26 @@ header .rs {
   -moz-box-shadow: 10px 10px 13px -6px rgb(41, 42, 42);
   box-shadow: 10px 10px 13px -6px rgba(41, 42, 42, 0.5);
 }
+#servicos .container .list-container .card-wrapper .card:nth-child(6) > div:nth-child(2) {
+  margin-bottom: 3rem;
+}
 #servicos .container .list-container .card-wrapper .card-header {
   position: relative;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 #servicos .container .list-container .card-wrapper .card-header-service {
-  color: rgb(58, 201, 135);
+  font-size: 14px;
+  color: #4A65C5;
   text-transform: uppercase;
   border-bottom: 1px solid #00151D;
   padding-bottom: 0.5rem;
   font-weight: bold;
+}
+@media screen and (min-width: 900px) {
+  #servicos .container .list-container .card-wrapper .card-header-service {
+    font-size: unset;
+  }
 }
 #servicos .container .list-container .card-wrapper .card-header-icon {
   position: absolute;
@@ -865,15 +882,20 @@ header .rs {
   #medios .container-section {
     min-width: 700px;
     max-width: 1300px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
+}
+#medios .container-section .tv .title {
+  font-size: smaller;
+  background-color: #999595;
+  color: #fff;
+}
+#medios .container-section .tv .title h3 {
+  padding: 0.5rem;
+  margin-left: 2.2rem;
 }
 #medios .container-section .tv .list-container .card-show-wrapper {
   max-width: 1300px;
-  padding: 0 1.6rem 2rem;
+  padding: 1rem;
   display: grid;
   gap: 1.4rem;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -881,7 +903,7 @@ header .rs {
 @media screen and (min-width: 900px) {
   #medios .container-section .tv .list-container .card-show-wrapper {
     gap: 0.4rem;
-    padding: 0 1rem 2rem;
+    padding: 1rem;
   }
 }
 #medios .container-section .tv .list-container .card-show-wrapper .card-show {
@@ -933,6 +955,40 @@ header .rs {
   width: 100% !important;
   height: 40px;
   width: 40px;
+}
+#medios .container-section .pics .title {
+  font-size: smaller;
+  background-color: #999595;
+  color: #fff;
+}
+#medios .container-section .pics .title h3 {
+  padding: 0.5rem;
+  margin-left: 2.2rem;
+}
+#medios .container-section .pics .list-container {
+  max-width: 1300px;
+  padding: 1rem;
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+#medios .container-section .pics .list-container .pic-wrapper {
+  background-color: #fff;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid #00151D;
+  border-radius: 0.4rem;
+  color: #999595;
+  -webkit-box-shadow: 10px 10px 13px -6px rgb(41, 42, 42);
+  -moz-box-shadow: 10px 10px 13px -6px rgb(41, 42, 42);
+  box-shadow: 10px 10px 13px -6px rgba(41, 42, 42, 0.5);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#medios .container-section .pics .list-container .pic-wrapper img {
+  border-radius: 4px;
+  border: 3px solid black;
+  object-fit: contain;
 }
 
 #contate {
@@ -1066,7 +1122,7 @@ header .rs {
   width: 85%;
   margin-top: 1.4rem;
   padding: 1.2rem 0;
-  background-color: rgb(58, 201, 135);
+  background-color: #4A65C5;
   color: #fff;
 }
 
