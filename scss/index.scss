@@ -216,6 +216,10 @@ header {
   img {
     transform: scale(.6);
   }
+
+  @include mixins.desktop() {
+    display: none;
+  }
 }
 
 #home{

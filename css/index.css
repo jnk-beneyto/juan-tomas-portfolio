@@ -572,6 +572,11 @@ header .rs {
 .call-action img {
   transform: scale(0.6);
 }
+@media screen and (min-width: 900px) {
+  .call-action {
+    display: none;
+  }
+}
 
 #home {
   position: relative;
