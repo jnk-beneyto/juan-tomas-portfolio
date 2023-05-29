@@ -1068,7 +1068,7 @@ header .rs {
 }
 @media screen and (min-width: 900px) {
   #contate .container-section .contact-list .map img {
-    object-fit: none;
+    object-fit: cover;
     max-width: 100%;
     padding: 0 2rem;
     min-height: 200px;

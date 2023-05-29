@@ -720,7 +720,7 @@ header {
             padding: unset;
 
             @include mixins.desktop() {
-              object-fit: none;
+              object-fit: cover;
               max-width: 100%;
               padding: 0 2rem;
               min-height: 200px;
