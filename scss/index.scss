@@ -253,7 +253,8 @@ header {
       @include mixins.flex-container();
       
       img {
-        max-width: 110px;
+        //max-width: 110px;
+        padding: 0 20px;
 
         @include mixins.minWidth() {
           max-width: 35%;
@@ -266,7 +267,7 @@ header {
         @include mixins.desktop() {
           max-width: 40%;
           padding-right: 1rem;
-          scale: unset;
+          scale: 1.5;
           margin-top:50px;
         }
       }

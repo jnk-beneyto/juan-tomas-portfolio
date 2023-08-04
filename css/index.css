@@ -628,7 +628,7 @@ header .rs {
   align-items: center;
 }
 #home .container .perito-image img {
-  max-width: 110px;
+  padding: 0 20px;
 }
 @media screen and (min-width: 376px) {
   #home .container .perito-image img {
@@ -644,7 +644,7 @@ header .rs {
   #home .container .perito-image img {
     max-width: 40%;
     padding-right: 1rem;
-    scale: unset;
+    scale: 1.5;
     margin-top: 50px;
   }
 }
